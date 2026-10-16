@@ -1,0 +1,411 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E0F2FE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 110px auto 40px auto;
+    padding: 0 20px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 25px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.info-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 10px;
+}
+
+.meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #E2E8F0;
+    padding-bottom: 10px;
+}
+
+.meta-item:last-child {
+    border: none;
+}
+
+.meta-label {
+    color: #64748B;
+    font-weight: 600;
+}
+
+.meta-value {
+    color: #1E293B;
+    font-weight: 700;
+    text-align: right;
+}
+
+.timeline {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+    border-left: 2px solid #E2E8F0;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10B981;
+    border: 2px solid white;
+}
+
+.timeline-date {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    font-weight: 600;
+}
+
+.timeline-note {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 3px;
+}
+
+.img-preview-box {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #E2E8F0;
+    background-color: #F8FAFC;
+}
+
+/* ==============================================================
+           DESKTOP NAVBAR
+        ============================================================== */
+.desktop-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav-brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.nav-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-brand-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #046D64;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.nav-brand-subtitle {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #64748B;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #046D64;
+    background-color: #F1F5F9;
+}
+
+.nav-menu a.active {
+    color: #046D64;
+}
+
+.nav-profile-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 15px 5px 5px;
+    border: 1px solid #E2E8F0;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-profile-pill:hover {
+    border-color: #046D64;
+    background-color: #F8FAFC;
+}
+
+.nav-profile-pill img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-profile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-profile-name {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #1E293B;
+    line-height: 1.2;
+}
+
+.nav-profile-role {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #046D64;
+}
+
+/* ==============================================================
+           FINAL FIX: PAGINATION (HAPUS KOTAK KOSONG & 1 BARIS RAPI)
+        ============================================================== */
+/* .pagination-wrapper-custom {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrapper-custom nav,
+.pagination-wrapper-custom nav>div,
+.pagination-wrapper-custom .relative.z-0.inline-flex {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+}
+
+/* Sembunyikan elemen bawaan yang tidak diperlukan & kotak kosong disabled 
+.pagination-wrapper-custom nav>div:first-child,
+.pagination-wrapper-custom p.text-sm,
+.pagination-wrapper-custom [rel="prev"],
+.pagination-wrapper-custom [rel="next"],
+.pagination-wrapper-custom span[aria-disabled="true"],
+.pagination-wrapper-custom svg {
+    display: none !important;
+}
+
+/* Desain Kotak Angka 
+.pagination-wrapper-custom a,
+.pagination-wrapper-custom span[aria-current="page"]>span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: #64748B !important;
+    background: #FFFFFF !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+}
+
+.pagination-wrapper-custom a:hover {
+    transform: translateY(-3px) !important;
+    border-color: #046D64 !important;
+    color: #046D64 !important;
+    box-shadow: 0 8px 15px rgba(4, 109, 100, 0.1) !important;
+}
+
+/* Kotak Halaman Aktif (Menyala Hijau) 
+.pagination-wrapper-custom span[aria-current="page"]>span {
+    background: linear-gradient(135deg, #046D64 0%, #02453F 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 8px 15px rgba(4, 109, 100, 0.3) !important;
+    transform: translateY(-3px) !important;
+} */
+
+/* ==============================================================
+           RESPONSIVE HP
+        ============================================================== */
+.mobile-top-navbar {
+    display: none;
+}
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-navbar {
+        display: none !important;
+    }
+
+    .main-container {
+        margin-top: 85px;
+        padding-bottom: 95px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-top-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 12px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 98;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .mobile-top-navbar .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        color: #1E293B;
+        font-size: 1.15rem;
+    }
+
+    .mobile-bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #FFFFFF;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        z-index: 99;
+        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.06);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 0 10px;
+    }
+
+    .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #94A3B8;
+        font-size: 0.65rem;
+        font-weight: 700;
+        gap: 5px;
+        flex: 1;
+        height: 100%;
+        transition: all 0.3s;
+    }
+
+    .mobile-bottom-nav a i {
+        font-size: 1.3rem;
+        transition: all 0.3s;
+    }
+
+    .mobile-bottom-nav a.active {
+        color: #046D64;
+    }
+
+    .mobile-bottom-nav a.active i {
+        transform: translateY(-4px);
+        color: #046D64;
+        font-size: 1.45rem;
+    }
+}

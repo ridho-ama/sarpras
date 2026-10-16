@@ -1,0 +1,154 @@
+/* =========================================================
+       STYLING AREA CHART DINAMIS & RESPONSIF HP
+    ========================================================= */
+
+.chart-area-fill {
+    fill: url(#chartGradient);
+    opacity: 0.35;
+    transition: all 0.5s ease;
+    /* Animasi mulus */
+}
+
+.chart-line-path {
+    fill: none;
+    stroke: #046D64;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.5s ease;
+    /* Animasi mulus */
+}
+
+.chart-data-dot {
+    fill: #FFFFFF;
+    stroke: #046D64;
+    stroke-width: 3;
+    transition: cy 0.5s ease, r 0.2s;
+    /* Animasi bergerak naik turun */
+    cursor: pointer;
+}
+
+.chart-data-dot:hover {
+    r: 6;
+    fill: #046D64;
+}
+
+.chart-val-label {
+    font-size: 11px;
+    fill: #046D64;
+    font-weight: 800;
+    text-anchor: middle;
+    transition: y 0.5s ease;
+    /* Animasi angka mengikuti titik */
+}
+.chart-container-box {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 2px solid #E2E8F0;
+    padding: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.chart-filter-select {
+    padding: 8px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1E293B;
+    background: #F8FAFC;
+    outline: none;
+    cursor: pointer;
+}
+
+.chart-filter-select:focus {
+    border-color: #046D64;
+}
+
+/* SVG Chart Layout */
+.chart-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.area-chart-svg {
+    width: 100%;
+    min-width: 550px;
+    /* Menjamin grafik 12 bulan tidak berhimpit di HP */
+    height: 230px;
+    overflow: visible;
+}
+
+.chart-grid-line {
+    stroke: #F1F5F9;
+    stroke-dasharray: 4;
+    stroke-width: 1;
+}
+
+.chart-area-fill {
+    fill: url(#chartGradient);
+    opacity: 0.35;
+}
+
+.chart-line-path {
+    fill: none;
+    stroke: #046D64;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.chart-data-dot {
+    fill: #FFFFFF;
+    stroke: #046D64;
+    stroke-width: 3;
+    transition: r 0.2s;
+    cursor: pointer;
+}
+
+.chart-data-dot:hover {
+    r: 6;
+    fill: #046D64;
+}
+
+.chart-axis-label {
+    font-size: 10px;
+    fill: #64748B;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.chart-y-label {
+    font-size: 10px;
+    fill: #94A3B8;
+    font-weight: 700;
+    text-anchor: end;
+}
+
+@media screen and (max-width: 768px) {
+    .chart-container-box {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .chart-header-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .chart-filter-select {
+        width: 100%;
+    }
+}

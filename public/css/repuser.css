@@ -1,0 +1,419 @@
+/* ===================================================================
+   MINIMALIST ARCHITECTURE FOR REPORTS TAB STYLE
+==================================================================== */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+}
+body {
+    background-color: #C3E2FF;
+    color: #1E293B;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- GRID INTEGRASI ANALISIS ATAS --- */
+.reports-analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 35px auto;
+    width: 100%;
+}
+
+/* --- INTERAKTIF DIAGRAM BATANG --- */
+.bar-chart-container-card {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #C3E2FF;
+    box-shadow: 0 10px 25px rgba(4, 109, 100, 0.03);
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+}
+.bar-chart-flex-render {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 180px;
+    padding-top: 20px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 10px;
+}
+.bar-vertical-pillar {
+    width: 45px;
+    background: linear-gradient(180deg, #00A896 0%, #046D64 100%);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.bar-vertical-pillar:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, #10B981 0%, #046D64 100%);
+}
+.bar-floating-counter {
+    position: absolute;
+    top: -28px;
+    background: #1E293B;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.bar-axis-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* --- REVISI UTAMA: SAKELAR GARIS BAWAH MINIMALIS (UNDERLINE BORDER TAB) --- */
+.tab-segmented-capsule-wrapper {
+    display: flex;
+    gap: 30px;
+    border-bottom: 2px solid #E2E8F0; /* Garis landasan tipis */
+    padding-bottom: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.btn-tab-toggle-trigger {
+    background: none;
+    border: none;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #64748B;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-tab-toggle-trigger:hover {
+    color: #046D64;
+}
+/* Efek garis bawah aktif yang elegan dan sederhana */
+.btn-tab-toggle-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #046D64;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+.btn-tab-toggle-trigger.active-tab-text {
+    color: #046D64;
+}
+.btn-tab-toggle-trigger.active-tab-text::after {
+    transform: scaleX(1); /* Garis bawah memanjang penuh hanya saat aktif */
+}
+
+/* --- VIEWPORT CONTAINER TRACK SLIDER --- */
+.wide-table-card-slider-container {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 35px 20px;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+    overflow: hidden;
+    height: auto !important;
+    min-height: auto !important;
+    padding-bottom: 30px !important;
+    position: relative;
+
+}
+.tables-horizontal-slider-track {
+    width: 100% !important;
+    display: block !important;
+    transform: none !important;
+    filter: none !important;
+}
+.single-table-slide-pane {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 0 5px;
+    width: 100% !important;
+    height: auto !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+}
+.single-table-slide-pane {
+    width: 100%;
+    height: auto !important;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.pane-fade-enter {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.pane-fade-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(3px);
+    display: none;
+    /* Default tersembunyi */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    /* Memastikan di paling atas */
+    border-radius: 24px;
+}
+
+/* KELAS AKTIF LOADING */
+.tab-loading-overlay.show-loading {
+    display: flex !important;
+}
+
+/* Spinner Putar */
+.tab-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #E2E8F0;
+    border-top: 4px solid #046D64;
+    border-radius: 50%;
+    animation: spinTab 0.8s linear infinite;
+}
+
+@keyframes spinTab {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.pagination-wrapper-custom {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.table-responsive-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.table-responsive-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.table-responsive-scroll::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 10px;
+}
+.table-responsive-scroll::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 10px;
+}
+.table-responsive-scroll::-webkit-scrollbar-thumb:hover {
+    background: #046D64;
+}
+
+.filter-bar-luxury-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px 25px;
+    border: 2px solid #E2E8F0;
+    margin-bottom: 25px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.filter-form-flex-layout {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Menjaga agar form otomatis turun baris di HP */
+    width: 100%;
+}
+.filter-input-group-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 200px; /* Lebar minimal kolom filter di layar desktop */
+    text-align: left;
+}
+.filter-input-group-block label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.filter-select-dropdown-custom {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #1E293B;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.filter-select-dropdown-custom:focus {
+    border-color: #046D64;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(4, 109, 100, 0.08);
+}
+.btn-filter-reset-clear {
+    background-color: #F1F5F9;
+    color: #475569;
+    border: 1px solid #E2E8F0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 40px;
+    margin-top: auto;
+    transition: all 0.2s;
+}
+.btn-filter-reset-clear:hover {
+    background-color: #E2E8F0;
+    color: #0F172A;
+}
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    /* 1. Paksa Grid Atas Menjadi 1 Kolom Tunggal */
+    .reports-analytics-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 5px;
+    }
+
+    /* 2. Sesuaikan Grafik Batang di Layar Sempit */
+    .bar-chart-container-card {
+        grid-column: span 1 !important;
+        padding: 15px 10px !important;
+        border-radius: 14px !important;
+    }
+    .bar-chart-flex-render {
+        height: 120px; /* Diperpendek lagi agar tidak memakan ruang layar HP kecil */
+        padding-top: 5px;
+    }
+    .bar-vertical-pillar {
+        width: 24px; /* Dipangkas tipis agar 4 pilar muat dalam lebar 320px-360px */
+    }
+    .bar-floating-counter {
+        top: -22px;
+        font-size: 0.65rem;
+        padding: 1px 4px;
+    }
+    .bar-axis-label {
+        font-size: 0.6rem;
+        letter-spacing: -0.5px;
+    }
+
+    /* 3. Ratakan Tengah Isi Donut Chart di Layar HP */
+    .reports-analytics-grid > div {
+        padding: 20px 15px !important;
+        flex-direction: column !important; /* Susun vertikal ke bawah */
+        gap: 15px;
+        text-align: center !important;
+    }
+    .reports-analytics-grid > div > div {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* 4. Minimalisir Spasi Wrapper Tabel Slider */
+    .wide-table-card-slider-container {
+        padding: 20px 10px !important;
+        border-radius: 16px !important;
+    }
+
+    /* 5. Navigasi Garis Bawah di HP Kecil */
+    .tab-segmented-capsule-wrapper {
+        gap: 15px;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .btn-tab-toggle-trigger {
+        font-size: 0.8rem;
+        padding: 8px 0;
+        flex: 1;
+        justify-content: center;
+    }
+    .mobile-bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #FFFFFF;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        z-index: 99;
+        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.06);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 0 10px;
+    }   
+    .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #94A3B8;
+        font-size: 0.65rem;
+        font-weight: 700;
+        gap: 5px;
+        flex: 1;
+        height: 100%;
+        transition: all 0.3s;
+    }   
+    .mobile-bottom-nav a i {
+        font-size: 1.3rem;
+        transition: all 0.3s;
+    }   
+    .mobile-bottom-nav a.active {
+        color: #046D64;
+    }   
+    .mobile-bottom-nav a.active i {
+        transform: translateY(-4px);
+        color: #046D64;
+        font-size: 1.45rem;
+    }
+}

@@ -1,0 +1,263 @@
+* {
+        margin: 0; padding: 0; box-sizing: border-box;
+        font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    }
+    body {
+        background-color: #C3E2FF; /* Tetap mempertahankan warna latar belakang asli */
+        color: #1E293B;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    /* NEW COMPONENTS: HEADER NAV ATAS PENGGANTI SIDEBAR LAMA */
+    .dashboard-top-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 8%;
+        background: #FFFFFF;
+        border-bottom: 2px solid #E2E8F0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .dash-nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+    .dash-nav-title h2 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #046D64;
+        line-height: 1;
+    }
+    .dash-nav-title p {
+        font-size: 0.65rem;
+        color: #64748B;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 3px;
+    }
+    /* Menu Link Navigasi Tengah */
+    .dash-nav-menu-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        list-style: none;
+    }
+    .dash-nav-menu-links a {
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s ease;
+    }
+    .dash-nav-menu-links a:hover,
+    .dash-nav-menu-links .active-nav a {
+        color: #046D64;
+    }
+    /* Grup Tombol Auth / Profile Kanan Atas Navbar */
+    .dash-nav-auth-profile-group {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    /* MAIN CONTENT SECTION FULL MELEBAR RELEVAN */
+    .dashboard-main-content-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        margin: 40px auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+        flex: 1;
+    }
+    
+    .dashboard-welcome-banner {
+        background: linear-gradient(135deg, #046D64 0%, #00A896 100%);
+        color: #FFFFFF;
+        padding: 35px 40px;
+        border-radius: 20px;
+        margin-bottom: 35px;
+        box-shadow: 0 10px 20px rgba(4, 109, 100, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .banner-text-left h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 5px; }
+    .banner-text-left p { font-size: 0.95rem; opacity: 0.9; font-weight: 500; }
+    
+    .dashboard-info-layout-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: start;
+    }
+    .guide-instruction-card {
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 30px;
+        border: 2px solid #E2E8F0;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
+    .guide-step-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 18px 0;
+        border-bottom: 1px dashed #E2E8F0;
+    }
+    .guide-step-row:last-child { border: none; padding-bottom: 0; }
+    .guide-number-circle {
+        width: 40px; height: 40px; background-color: #E6F4F1; color: #046D64;
+        font-weight: 800; font-size: 1.1rem; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .guide-text-body h4 { font-size: 1.05rem; font-weight: 700; color: #1E293B; margin-bottom: 4px; text-align: left; }
+    .guide-text-body p { font-size: 0.85rem; color: #64748B; line-height: 1.5; text-align: left; }
+    .features-overview-card {
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 30px;
+        border: 2px solid #C3E2FF;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
+    .feature-box-item {
+        background-color: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        padding: 20px;
+        border-radius: 14px;
+        margin-bottom: 15px;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        text-align: left;
+        transition: transform 0.2s;
+    }
+    .feature-box-item:hover { transform: translateX(5px); border-color: #046D64; }
+    .feature-box-item:last-child { margin-bottom: 0; }
+    .feature-icon-square {
+        width: 44px; height: 44px; border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem; flex-shrink: 0;
+    }
+    .f-bg-blue { background-color: #E0F2FE; color: #0369A1; }
+    .f-bg-oren { background-color: #fcecdc; color: #f89e30; }
+    .f-bg-green { background-color: #DCFCE7; color: #15803D; }
+    .f-bg-purple { background-color: #F3E8FF; color: #7E22CE; }
+    
+    .feature-text-block h4 { font-size: 0.95rem; font-weight: 700; color: #1E293B; margin-bottom: 3px; }
+    .feature-text-block p { font-size: 0.8rem; color: #64748B; line-height: 1.4; }
+    .mobile-bottom-nav { display: none; }
+
+    
+    @media screen and (max-width: 680px) {
+        /* 1. Navbar Atas Menjadi Padat & Sederhana */
+        .body {
+            min-height: 200vh;
+        }
+        .dashboard-top-navbar { 
+            padding: 10px 15px; 
+        }
+        .dash-nav-menu-links { 
+            display: none !important; /* Sembunyikan menu teks agar tidak menumpuk di HP */
+        } 
+        .dash-nav-title h2 {
+            font-size: 1rem;
+        }
+        .dash-nav-title p {
+            font-size: 0.55rem;
+        }
+        /* 2. Kontainer Utama Melebar Penuh Mengikuti Sisi Kaca HP */
+        .dashboard-main-content-wrapper {
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+        /* 3. Spanduk Selamat Datang Bertumpuk Vertikal Pas */
+        .dashboard-welcome-banner { 
+            flex-direction: column; 
+            text-align: center; 
+            gap: 20px; 
+            padding: 20px 15px; 
+            border-radius: 14px;
+        }
+        .banner-text-left { 
+            text-align: center !important; 
+        }
+        .banner-text-left h2 {
+            font-size: 1.4rem;
+        }
+        .banner-text-left p {
+            font-size: 0.85rem;
+        }
+        .btn-create-report {
+            width: 100%;
+            justify-content: center;
+            font-size: 0.85rem;
+            padding: 10px 16px !important;
+        }
+        /* 4. Grid Konten Otomatis Menjadi 1 Kolom Lurus Kebawah */
+        .dashboard-info-layout-grid { 
+            grid-template-columns: 1fr !important; 
+            gap: 20px; 
+        }
+        /* 5. Perampingan Jarak Padding Kotak Panduan & Fitur */
+        .guide-instruction-card,
+        .features-overview-card {
+            padding: 20px 15px !important;
+            border-radius: 14px !important;
+        }
+        .guide-step-row {
+            gap: 12px;
+            padding: 14px 0;
+        }
+        .guide-number-circle {
+            width: 32px;
+            height: 32px;
+            font-size: 0.95rem;
+        }
+        .guide-text-body h4 {
+            font-size: 0.95rem;
+        }
+        .guide-text-body p {
+            font-size: 0.8rem;
+        }
+        
+        .feature-box-item {
+            padding: 15px 12px !important;
+            border-radius: 10px !important;
+            gap: 12px;
+        }
+        .feature-icon-square {
+            width: 38px;
+            height: 38px;
+            font-size: 1rem;
+        }
+        .feature-text-block h4 {
+            font-size: 0.9rem;
+        }
+        .feature-text-block p {
+            font-size: 0.75rem;
+        }
+        .mobile-bottom-nav {
+                display: flex; justify-content: space-around; align-items: center;
+                background: #FFFFFF; position: fixed; bottom: 0; left: 0; right: 0;
+                height: 70px; z-index: 99; box-shadow: 0 -5px 25px rgba(0,0,0,0.06);
+                border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 0 10px;
+            }
+            .mobile-bottom-nav a {
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                text-decoration: none; color: #94A3B8; font-size: 0.65rem; font-weight: 700; gap: 5px; flex: 1; height: 100%; transition: all 0.3s;
+            }
+            .mobile-bottom-nav a i { font-size: 1.3rem; transition: all 0.3s; }
+            .mobile-bottom-nav a.active { color: #046D64; }
+            .mobile-bottom-nav a.active i { transform: translateY(-4px); color: #046D64; font-size: 1.45rem; }
+    }

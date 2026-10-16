@@ -1,0 +1,263 @@
+.btn-back-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.btn-back-box:hover {
+    background-color: #E2E8F0;
+    color: #0F172A;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    max-width: 1100px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.info-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 10px;
+}
+
+.meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #E2E8F0;
+    padding-bottom: 10px;
+}
+
+.meta-item:last-child {
+    border: none;
+}
+
+.meta-label {
+    color: #64748B;
+    font-weight: 600;
+}
+
+.meta-value {
+    color: #1E293B;
+    font-weight: 700;
+}
+
+.timeline {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+    border-left: 2px solid #E2E8F0;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10B981;
+    border: 2px solid white;
+}
+
+.timeline-date {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    font-weight: 600;
+}
+
+.timeline-note {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 3px;
+}
+
+.img-preview-box {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #E2E8F0;
+    background-color: #F8FAFC;
+}
+
+.pagination-wrapper-custom {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrapper-custom nav,
+.pagination-wrapper-custom nav>div,
+.pagination-wrapper-custom .relative.z-0.inline-flex {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+}
+
+/* Sembunyikan elemen bawaan yang tidak diperlukan & kotak kosong disabled */
+.pagination-wrapper-custom nav>div:first-child,
+.pagination-wrapper-custom p.text-sm,
+.pagination-wrapper-custom [rel="prev"],
+.pagination-wrapper-custom [rel="next"],
+.pagination-wrapper-custom span[aria-disabled="true"],
+.pagination-wrapper-custom svg {
+    display: none !important;
+}
+
+/* Desain Kotak Angka */
+.pagination-wrapper-custom a,
+.pagination-wrapper-custom span[aria-current="page"]>span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: #64748B !important;
+    background: #FFFFFF !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+}
+
+.pagination-wrapper-custom a:hover {
+    transform: translateY(-3px) !important;
+    border-color: #046D64 !important;
+    color: #046D64 !important;
+    box-shadow: 0 8px 15px rgba(4, 109, 100, 0.1) !important;
+}
+
+/* Kotak Halaman Aktif (Menyala Hijau) */
+.pagination-wrapper-custom span[aria-current="page"]>span {
+    background: linear-gradient(135deg, #046D64 0%, #02453F 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 8px 15px rgba(4, 109, 100, 0.3) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* ==============================================================
+           TAMBAHAN CSS: RESPONSIVE HP & NAVBAR ATAS
+           ============================================================== */
+.mobile-top-navbar {
+    display: none;
+}
+
+.admin-sidebar-overlay-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+@media (max-width: 768px) {
+
+    /* Tampilkan Navbar Atas */
+    .btn-back-box {
+        display: none !important;
+    }
+
+    .admin-mobile-hamburger-trigger {
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        color: #1E293B;
+        cursor: pointer;
+    }
+
+    /* Sembunyikan sidebar ke kiri & profil di sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        background: white;
+    }
+
+    .sidebar.show-active {
+        transform: translateX(0);
+    }
+
+    .admin-sidebar-overlay-backdrop.show-active {
+        display: block;
+    }
+
+    .sidebar-profile {
+        display: none;
+    }
+
+    /* Pindah ke Navbar Atas */
+
+    /* Sesuaikan grid detail menjadi menumpuk rapi ke bawah */
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        display: center
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+}

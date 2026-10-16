@@ -1,0 +1,528 @@
+/* --- WELCOME LANDING PAGE CORE STYLESHEET --- */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+}
+body {
+    background-color: #C3E2FF;
+    color: #1E293B;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* --- NAVBAR MENGGANTUNG PREMIUM --- */
+.luxury-navbar-container {
+    padding: 0 8%;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+.luxury-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(4, 109, 100, 0.08);
+}
+.nav-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.nav-logo-text h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #046D64;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+.nav-logo-text p {
+    font-size: 0.65rem;
+    color: #64748B;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+}
+.nav-center-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+.nav-center-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+.nav-center-menu a:hover {
+    color: #046D64;
+}
+.nav-auth-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-nav-outline {
+    color: #046D64;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.btn-nav-outline:hover {
+    background-color: rgba(4, 109, 100, 0.08);
+}
+.btn-nav-solid-green {
+    background-color: #046D64;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: none;
+    box-shadow: 0 4px 12px rgba(4, 109, 100, 0.15);
+}
+.btn-nav-solid-green:hover {
+    background-color: #03524B;
+    transform: translateY(-1px);
+}
+
+/* --- SEKSI LAYOUT GLOBAL --- */
+section {
+    padding: 80px 8%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.section-header-center {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+}
+.section-header-center h3 {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #046D64;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+.section-header-center h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1E293B;
+    line-height: 1.2;
+}
+
+/* --- HERO SECTION --- */
+.hero-section-box {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.hero-left h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #1E293B;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+.hero-left h1 span {
+    color: #046D64;
+}
+.hero-left p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-right img {
+    width: 100%;
+    max-width: 440px;
+    border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(4, 109, 100, 0.1);
+    border: 4px solid #FFFFFF;
+    animation: floatingFloat 4s ease-in-out infinite;
+}
+@keyframes floatingFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- CONTAINER COMPONENTS --- */
+.white-container-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 35px;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.about-grid-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+.metric-pill {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+.metric-pill h4 { font-size: 1.8rem; font-weight: 800; color: #046D64; }
+.metric-pill p { font-size: 0.8rem; color: #64748B; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+
+/* --- STEP FLOW --- */
+.step-flow-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.step-node-card {
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid #E2E8F0;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.step-number-badge {
+    width: 36px;
+    height: 36px;
+    background: #046D64;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -45px auto 15px auto;
+    border: 4px solid #C3E2FF;
+}
+.step-node-card i { font-size: 1.8rem; color: #046D64; margin-bottom: 12px; display: block; }
+.step-node-card h4 { font-size: 0.95rem; font-weight: 700; color: #1E293B; margin-bottom: 8px; }
+.step-node-card p { font-size: 0.8rem; color: #64748B; line-height: 1.4; }
+
+/* --- PROGRESS BAR --- */
+.stat-bar-group { margin-bottom: 18px; }
+.stat-bar-meta { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px; }
+.stat-bar-bg { width: 100%; background: #F1F5F9; height: 10px; border-radius: 10px; overflow: hidden; }
+.stat-bar-fill { height: 100%; background-color: #046D64; border-radius: 10px; }
+
+/* --- FAQ --- */
+.faq-accordion-box { display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; }
+.faq-item { background: #FFFFFF; border-radius: 12px; border: 2px solid #E2E8F0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+.faq-question-trigger { padding: 18px 25px; font-weight: 700; color: #1E293B; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+.faq-answer-content { padding: 0 25px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: #475569; font-size: 0.85rem; line-height: 1.5; }
+.faq-item.open-faq .faq-answer-content { padding: 15px 25px 20px 25px; max-height: 150px; border-top: 1px solid #F1F5F9; }
+
+/* --- FOOTER COMPONENT --- */
+.luxury-footer {
+    background-color: #1E293B;
+    color: #94A3B8;
+    padding: 60px 8% 20px 8%;
+    margin-top: auto;
+    border-top: 4px solid #046D64;
+}
+.footer-grid-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-col h3 { color: #FFFFFF; font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; }
+.footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links-list a { text-decoration: none; color: #94A3B8; font-size: 0.85rem; transition: color 0.2s; font-weight: 600; }
+.footer-links-list a:hover { color: #FFFFFF; }
+.footer-bottom-bar { border-top: 1px solid #334155; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 100px;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #4294ff;
+  color: #fff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #f2321d;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+/* ===================================================================
+   KODE BARU: RESPONSIVE MEDIA QUERIES UNTUK LAYAR HP / MOBILE DEVICE
+==================================================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Penyesuaian Ruang Body & Padding Global Section */
+    body {
+        padding-top: 10px;
+    }
+    section {
+        padding: 50px 5% !important; /* Mempersempit padding kiri-kanan agar lega di HP */
+    }
+    .section-header-center h2 {
+        font-size: 1.7rem; /* Mengecilkan ukuran judul seksi */
+    }
+
+    /* 2. Transformasi Navbar Menggantung di HP */
+    .luxury-navbar-container {
+        padding: 0 4%;
+        top: 10px;
+    }
+    .luxury-navbar {
+        padding: 12px 20px;
+        flex-direction: column; /* Membuat susunan menu turun ke bawah jika layar sempit */
+        gap: 15px;
+        border-radius: 12px;
+    }
+    .nav-center-menu {
+        flex-wrap: wrap; /* Membiarkan menu membungkus ke baris baru jika tidak muat */
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+    .nav-center-menu a {
+        font-size: 0.85rem;
+    }
+    .nav-auth-group {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid #E2E8F0;
+        padding-top: 10px;
+    }
+    .btn-nav-outline, .btn-nav-solid-green {
+        padding: 7px 14px;
+        font-size: 0.5rem;
+        text-align: center;
+        flex: 2; /* Membuat tombol masuk & daftar terbagi adil seimbang */
+    }
+
+    /* 3. Pergeseran Hero Section Menjadi 1 Kolom Vertikal */
+    .hero-section-box {
+        grid-template-columns: 1fr; /* Memutar susunan dari 2 kolom ke 1 kolom */
+        text-align: center;
+        padding-top: 20px;
+        gap: 30px;
+    }
+    .hero-left h1 {
+        font-size: 2.2rem; /* Ukuran teks judul utama disesuaikan untuk HP */
+    }
+    .hero-left p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    .hero-left div {
+        justify-content: center; /* Memposisikan tombol lapor di tengah layar HP */
+    }
+    .hero-right img {
+        max-width: 85%; /* Mengecilkan gambar ilustrasi agar proporsional */
+    }
+
+    /* 4. Pergeseran Rumpun Alur Panduan 4 Langkah */
+    .step-flow-wrapper {
+        grid-template-columns: 1fr; /* Menumpuk 4 tahapan lapor tegak lurus ke bawah */
+        gap: 40px;
+        padding-top: 20px;
+    }
+    .step-node-card {
+        padding: 20px;
+    }
+
+    /* 5. Pemetaan Metrik Tentang Sarpras */
+    .about-grid-metrics {
+        grid-template-columns: 1fr; /* Menumpuk 3 kartu informasi */
+        gap: 15px;
+    }
+
+    /* 6. Pergeseran Tata Letak Kaki (Footer) */
+    .footer-grid-row {
+        grid-template-columns: 1fr; /* Membuat 3 kolom footer meluncur ke bawah */
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-bottom-bar, .lihat {
+        flex-direction: column; /* Memisahkan total laporan & hak cipta secara vertikal */
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-bottom-bar div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer-bottom-bar a {
+        margin-left: 0 !important;
+    }
+        /* Responsif tambahan untuk seksi diagram baru di HP */
+    #statistik > div {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+}
+
+/* ===================================================================
+   KODE BARU: RESPONSIVE SCREEN PENEL DATA LAPORAN UNTUK LAYAR HP
+==================================================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Pemutaran Grid Analisis Atas Menjadi 1 Kolom Vertikal */
+    .reports-analytics-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 10px;
+    }
+
+    /* 2. Penyesuaian Komponen Diagram Batang Bulanan di HP */
+    .bar-chart-container-card {
+        grid-column: span 1 !important;
+        padding: 20px 15px !important;
+    }
+    .bar-chart-flex-render {
+        height: 140px; /* Sedikit diceperkan agar muat di layar HP */
+        padding-top: 10px;
+    }
+    .bar-vertical-pillar {
+        width: 32px; /* Merampingkan pilar batang agar tidak tabrakan ke samping */
+        border-radius: 6px 6px 0 0;
+    }
+    .bar-floating-counter {
+        top: -24px;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    .bar-axis-label {
+        font-size: 0.65rem; /* Mengecilkan teks sumbu X (Minggu I, II, dst) */
+        letter-spacing: -0.3px;
+    }
+
+    /* 3. Kartu Putih Donut Chart & Top 3 Fasilitas */
+    .reports-analytics-grid > div {
+        padding: 20px !important;
+        flex-direction: column !important; /* Membuat isi donut chart berbaris tegak */
+        text-align: center;
+        gap: 15px;
+    }
+    .reports-analytics-grid > div style, 
+    .reports-analytics-grid > div div {
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    /* 4. Perampingan Lebar Tabel Eksplorasi Publik */
+    .wide-table-card {
+        padding: 25px 15px !important;
+        border-radius: 16px !important;
+    }
+    .wide-table-card table th:nth-child(3),
+    .wide-table-card table td:nth-child(3) {
+        text-align: right !important; /* Memposisikan status pil di kanan pada HP */
+    }
+    
+    /* Menyembunyikan kolom status teks jika layar terlalu sempit (Opsional untuk estetika) */
+    .wide-table-card table th, 
+    .wide-table-card table td {
+        padding: 12px 8px !important;
+        font-size: 0.85rem !important;
+    }
+}
